@@ -1,0 +1,23 @@
+<tui-input *tuiLet="matches$ | async as matches" [formControl]="control">
+  Placeholder
+  <input tuiTextfield type="text"/>
+
+  <ng-container *ngIf="matches?.length">
+    <tui-data-list *tuiDataList>
+      <button *ngFor="let address of matches" tuiOption [value]="address">
+        {{ address }}
+      </button>
+    </tui-data-list>
+  </ng-container>
+
+</tui-input>
+
+<!--<tui-combo-box *tuiLet="matches$ | async as matches" [search]="null"  [formControl]="control" [tuiTextfieldCustomContent]="null">-->
+<!--  <ng-container *ngIf="matches?.length">-->
+<!--    <tui-data-list *tuiDataList>-->
+<!--      <button *ngFor="let address of matches" tuiOption [value]="address">-->
+<!--        {{ address }}-->
+<!--      </button>-->
+<!--    </tui-data-list>-->
+<!--  </ng-container>-->
+<!--</tui-combo-box>-->
